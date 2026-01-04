@@ -14,12 +14,14 @@ jobs:
   tag:
     needs: version
     uses: ./.github/workflows/git-tag.yml
+    secrets: inherit
     with:
       version: ${{ needs.version.outputs.version }}
 
   github-release:
     needs: [version, tag]
     uses: ./.github/workflows/github-release.yml
+    secrets: inherit
     with:
       version: ${{ needs.version.outputs.version }}
       package: '@okja/chi-tokens'

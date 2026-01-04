@@ -15,8 +15,7 @@ jobs:
   release:
     needs: lint
     uses: ./.github/workflows/release.yml
-    permissions:
-      contents: write
+    secrets: inherit
 
   publish:
     needs: release
