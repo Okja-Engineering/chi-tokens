@@ -1,0 +1,36 @@
+name: Git Tag
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: 'Version to tag'
+        type: string
+        required: true
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Bump version
+        run: npm version ${{ inputs.version }} --no-git-tag-version --allow-same-version
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit & tag
+        run: |
+          git add package.json
+          git commit -m "chore: release v${{ inputs.version }}"
+          git tag "v${{ inputs.version }}"
+          git push origin main --tags

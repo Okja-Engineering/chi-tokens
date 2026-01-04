@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  workflow_call:
+    outputs:
+      version:
+        description: 'The released version'
+        value: ${{ jobs.version.outputs.version }}
+
+jobs:
+  version:
+    uses: ./.github/workflows/version.yml
+
+  tag:
+    needs: version
+    uses: ./.github/workflows/git-tag.yml
+    with:
+      version: ${{ needs.version.outputs.version }}
+
+  github-release:
+    needs: [version, tag]
+    uses: ./.github/workflows/github-release.yml
+    with:
+      version: ${{ needs.version.outputs.version }}
+      package: '@okja/chi-tokens'
