@@ -1,0 +1,25 @@
+{
+  "name": "@okja/chi-tokens",
+  "version": "0.2.0",
+  "description": "Design tokens - colors, typography, spacing, radius, shadow, motion",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/tokens.json",
+    "./tokens": "./src/tokens.json",
+    "./tokens.json": "./src/tokens.json",
+    "./colors/grayscale": "./src/colors/grayscale.json",
+    "./colors/grayscale.json": "./src/colors/grayscale.json",
+    "./colors/blue": "./src/colors/blue.json",
+    "./colors/blue.json": "./src/colors/blue.json",
+    "./colors/purple": "./src/colors/purple.json",
+    "./colors/purple.json": "./src/colors/purple.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src"
+  ]
+}
