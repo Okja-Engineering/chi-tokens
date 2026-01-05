@@ -26,7 +26,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Configure git
@@ -50,6 +50,8 @@ jobs:
 
       - name: Publish to npm
         run: npm publish --provenance --access public
+        env:
+          NPM_CONFIG_PROVENANCE: true
 
       - name: GitHub Release
         uses: softprops/action-gh-release@v2
