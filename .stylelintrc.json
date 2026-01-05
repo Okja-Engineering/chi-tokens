@@ -1,0 +1,15 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "custom-property-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "no-empty-source": null,
+    "import-notation": "string",
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["custom-media"]
+      }
+    ]
+  }
+}
