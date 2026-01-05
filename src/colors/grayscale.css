@@ -1,160 +1,70 @@
 /**
- * Chi Design System - Grayscale Color Scale
- * Default theme colors (migrated from theme-light/dark)
+ * Chi Design System - Grayscale Color Palette
+ * Neutral grayscale for wireframing and prototyping
  */
 
-:root {
-  /* Primary colors - grayscale with slight blue tint */
-  --chi-color-primary: oklch(49.4% 0.163 264.05deg);
-  --chi-color-on-primary: oklch(100% 0 0deg);
-  --chi-color-primary-container: oklch(79.7% 0.105 264.05deg);
-  --chi-color-on-primary-container: oklch(20% 0.163 264.05deg);
-
-  /* Secondary colors - grayscale with purple tint */
-  --chi-color-secondary: oklch(61.8% 0.15 314.05deg);
-  --chi-color-on-secondary: oklch(100% 0 0deg);
-  --chi-color-secondary-container: oklch(85.1% 0.08 314.05deg);
-  --chi-color-on-secondary-container: oklch(25.1% 0.15 314.05deg);
-
-  /* Tertiary colors - grayscale with warm tint */
-  --chi-color-tertiary: oklch(70.4% 0.15 29.23deg);
-  --chi-color-on-tertiary: oklch(100% 0 0deg);
-  --chi-color-tertiary-container: oklch(90.2% 0.08 29.23deg);
-  --chi-color-on-tertiary-container: oklch(30.2% 0.15 29.23deg);
-
-  /* Error colors */
-  --chi-color-error: oklch(62.8% 0.258 29.23deg);
-  --chi-color-on-error: oklch(100% 0 0deg);
-  --chi-color-error-container: oklch(90.2% 0.08 29.23deg);
-  --chi-color-on-error-container: oklch(30.2% 0.15 29.23deg);
-
-  /* Surface colors */
-  --chi-color-surface: oklch(99.1% 0.005 264.05deg);
-  --chi-color-on-surface: oklch(20% 0.005 264.05deg);
-  --chi-color-surface-variant: oklch(92.5% 0.02 264.05deg);
-  --chi-color-on-surface-variant: oklch(30% 0.02 264.05deg);
-  --chi-color-surface-container: oklch(96.1% 0.01 264.05deg);
-  --chi-color-surface-container-low: oklch(98.1% 0.005 264.05deg);
-  --chi-color-surface-container-high: oklch(94.1% 0.01 264.05deg);
-  --chi-color-surface-container-highest: oklch(92.1% 0.01 264.05deg);
-
-  /* Surface elevation aliases */
-  --chi-color-surface-0: var(--chi-color-surface);
-  --chi-color-surface-1: oklch(97.1% 0.01 264.05deg);
-  --chi-color-surface-2: var(--chi-color-surface-container-high);
-  --chi-color-surface-3: oklch(92.1% 0.01 264.05deg);
-  --chi-color-surface-4: oklch(91.1% 0.01 264.05deg);
-  --chi-color-surface-5: oklch(90.1% 0.01 264.05deg);
-
-  /* Background */
-  --chi-color-background: var(--chi-color-surface);
-  --chi-color-on-background: var(--chi-color-on-surface);
-
-  /* Outlines */
-  --chi-color-outline: oklch(50% 0.02 264.05deg);
-  --chi-color-outline-variant: oklch(80% 0.02 264.05deg);
-  --chi-color-divider: var(--chi-color-outline-variant);
-
-  /* Inverse colors */
-  --chi-color-inverse-surface: oklch(25% 0.01 264.05deg);
-  --chi-color-inverse-on-surface: oklch(95% 0.005 264.05deg);
-  --chi-color-inverse-primary: oklch(79.7% 0.105 264.05deg);
-
-  /* Scrim and shadow */
-  --chi-color-scrim: oklch(0% 0 0deg);
-  --chi-color-shadow: oklch(0% 0 0deg);
-}
-
-/* Dark mode overrides */
-@media (prefers-color-scheme: dark) {
+@layer tokens {
   :root {
-    --chi-color-primary: oklch(79.7% 0.105 264.05deg);
-    --chi-color-on-primary: oklch(30% 0.163 264.05deg);
-    --chi-color-primary-container: oklch(35% 0.163 264.05deg);
-    --chi-color-on-primary-container: oklch(90% 0.105 264.05deg);
+    color-scheme: light dark;
 
-    --chi-color-secondary: oklch(75.1% 0.08 314.05deg);
-    --chi-color-on-secondary: oklch(35.1% 0.15 314.05deg);
-    --chi-color-secondary-container: oklch(40.1% 0.15 314.05deg);
-    --chi-color-on-secondary-container: oklch(90.1% 0.08 314.05deg);
+    /* Primary */
+    --color-primary: light-dark(oklch(49.4% 0.163 264deg), oklch(79.7% 0.105 264deg));
+    --color-on-primary: light-dark(oklch(100% 0 0deg), oklch(30% 0.163 264deg));
+    --color-primary-container: light-dark(oklch(79.7% 0.105 264deg), oklch(35% 0.163 264deg));
+    --color-on-primary-container: light-dark(oklch(20% 0.163 264deg), oklch(90% 0.105 264deg));
 
-    --chi-color-tertiary: oklch(80.2% 0.08 29.23deg);
-    --chi-color-on-tertiary: oklch(40.2% 0.15 29.23deg);
-    --chi-color-tertiary-container: oklch(45.2% 0.15 29.23deg);
-    --chi-color-on-tertiary-container: oklch(95.2% 0.08 29.23deg);
+    /* Secondary */
+    --color-secondary: light-dark(oklch(61.8% 0.15 314deg), oklch(75.1% 0.08 314deg));
+    --color-on-secondary: light-dark(oklch(100% 0 0deg), oklch(35.1% 0.15 314deg));
+    --color-secondary-container: light-dark(oklch(85.1% 0.08 314deg), oklch(40.1% 0.15 314deg));
+    --color-on-secondary-container: light-dark(oklch(25.1% 0.15 314deg), oklch(90.1% 0.08 314deg));
 
-    --chi-color-error: oklch(80.2% 0.15 29.23deg);
-    --chi-color-on-error: oklch(40.2% 0.258 29.23deg);
-    --chi-color-error-container: oklch(45.2% 0.258 29.23deg);
-    --chi-color-on-error-container: oklch(95.2% 0.15 29.23deg);
+    /* Tertiary */
+    --color-tertiary: light-dark(oklch(70.4% 0.15 29deg), oklch(80.2% 0.08 29deg));
+    --color-on-tertiary: light-dark(oklch(100% 0 0deg), oklch(40.2% 0.15 29deg));
+    --color-tertiary-container: light-dark(oklch(90.2% 0.08 29deg), oklch(45.2% 0.15 29deg));
+    --color-on-tertiary-container: light-dark(oklch(30.2% 0.15 29deg), oklch(95.2% 0.08 29deg));
 
-    --chi-color-surface: oklch(15% 0.005 264.05deg);
-    --chi-color-on-surface: oklch(90% 0.005 264.05deg);
-    --chi-color-surface-variant: oklch(25% 0.02 264.05deg);
-    --chi-color-on-surface-variant: oklch(75% 0.02 264.05deg);
-    --chi-color-surface-container: oklch(20% 0.01 264.05deg);
-    --chi-color-surface-container-low: oklch(17% 0.005 264.05deg);
-    --chi-color-surface-container-high: oklch(25% 0.01 264.05deg);
-    --chi-color-surface-container-highest: oklch(30% 0.01 264.05deg);
+    /* Error */
+    --color-error: light-dark(oklch(62.8% 0.258 29deg), oklch(80.2% 0.15 29deg));
+    --color-on-error: light-dark(oklch(100% 0 0deg), oklch(40.2% 0.258 29deg));
+    --color-error-container: light-dark(oklch(90.2% 0.08 29deg), oklch(45.2% 0.258 29deg));
+    --color-on-error-container: light-dark(oklch(30.2% 0.15 29deg), oklch(95.2% 0.15 29deg));
 
-    --chi-color-surface-0: var(--chi-color-surface);
-    --chi-color-surface-1: oklch(18% 0.01 264.05deg);
-    --chi-color-surface-2: oklch(21% 0.01 264.05deg);
-    --chi-color-surface-3: oklch(24% 0.01 264.05deg);
-    --chi-color-surface-4: oklch(26% 0.01 264.05deg);
-    --chi-color-surface-5: oklch(28% 0.01 264.05deg);
+    /* Surface */
+    --color-surface: light-dark(oklch(99.1% 0.005 264deg), oklch(15% 0.005 264deg));
+    --color-on-surface: light-dark(oklch(20% 0.005 264deg), oklch(90% 0.005 264deg));
+    --color-surface-variant: light-dark(oklch(92.5% 0.02 264deg), oklch(25% 0.02 264deg));
+    --color-on-surface-variant: light-dark(oklch(30% 0.02 264deg), oklch(75% 0.02 264deg));
+    --color-surface-container: light-dark(oklch(96.1% 0.01 264deg), oklch(20% 0.01 264deg));
+    --color-surface-container-low: light-dark(oklch(98.1% 0.005 264deg), oklch(17% 0.005 264deg));
+    --color-surface-container-high: light-dark(oklch(94.1% 0.01 264deg), oklch(25% 0.01 264deg));
+    --color-surface-container-highest: light-dark(oklch(92.1% 0.01 264deg), oklch(30% 0.01 264deg));
 
-    --chi-color-outline: oklch(60% 0.02 264.05deg);
-    --chi-color-outline-variant: oklch(35% 0.02 264.05deg);
+    /* Surface elevations */
+    --color-surface-0: var(--color-surface);
+    --color-surface-1: light-dark(oklch(97.1% 0.01 264deg), oklch(18% 0.01 264deg));
+    --color-surface-2: light-dark(oklch(94.1% 0.01 264deg), oklch(21% 0.01 264deg));
+    --color-surface-3: light-dark(oklch(92.1% 0.01 264deg), oklch(24% 0.01 264deg));
+    --color-surface-4: light-dark(oklch(91.1% 0.01 264deg), oklch(26% 0.01 264deg));
+    --color-surface-5: light-dark(oklch(90.1% 0.01 264deg), oklch(28% 0.01 264deg));
 
-    --chi-color-inverse-surface: oklch(90% 0.005 264.05deg);
-    --chi-color-inverse-on-surface: oklch(25% 0.01 264.05deg);
-    --chi-color-inverse-primary: oklch(49.4% 0.163 264.05deg);
+    /* Background */
+    --color-background: var(--color-surface);
+    --color-on-background: var(--color-on-surface);
+
+    /* Outline */
+    --color-outline: light-dark(oklch(50% 0.02 264deg), oklch(60% 0.02 264deg));
+    --color-outline-variant: light-dark(oklch(80% 0.02 264deg), oklch(35% 0.02 264deg));
+    --color-divider: var(--color-outline-variant);
+
+    /* Inverse */
+    --color-inverse-surface: light-dark(oklch(25% 0.01 264deg), oklch(90% 0.005 264deg));
+    --color-inverse-on-surface: light-dark(oklch(95% 0.005 264deg), oklch(25% 0.01 264deg));
+    --color-inverse-primary: light-dark(oklch(79.7% 0.105 264deg), oklch(49.4% 0.163 264deg));
+
+    /* Scrim and shadow */
+    --color-scrim: oklch(0% 0 0deg);
+    --color-shadow: oklch(0% 0 0deg);
   }
-}
-
-/* Explicit dark theme */
-[data-theme='dark'] {
-  --chi-color-primary: oklch(79.7% 0.105 264.05deg);
-  --chi-color-on-primary: oklch(30% 0.163 264.05deg);
-  --chi-color-primary-container: oklch(35% 0.163 264.05deg);
-  --chi-color-on-primary-container: oklch(90% 0.105 264.05deg);
-
-  --chi-color-secondary: oklch(75.1% 0.08 314.05deg);
-  --chi-color-on-secondary: oklch(35.1% 0.15 314.05deg);
-  --chi-color-secondary-container: oklch(40.1% 0.15 314.05deg);
-  --chi-color-on-secondary-container: oklch(90.1% 0.08 314.05deg);
-
-  --chi-color-tertiary: oklch(80.2% 0.08 29.23deg);
-  --chi-color-on-tertiary: oklch(40.2% 0.15 29.23deg);
-  --chi-color-tertiary-container: oklch(45.2% 0.15 29.23deg);
-  --chi-color-on-tertiary-container: oklch(95.2% 0.08 29.23deg);
-
-  --chi-color-error: oklch(80.2% 0.15 29.23deg);
-  --chi-color-on-error: oklch(40.2% 0.258 29.23deg);
-  --chi-color-error-container: oklch(45.2% 0.258 29.23deg);
-  --chi-color-on-error-container: oklch(95.2% 0.15 29.23deg);
-
-  --chi-color-surface: oklch(15% 0.005 264.05deg);
-  --chi-color-on-surface: oklch(90% 0.005 264.05deg);
-  --chi-color-surface-variant: oklch(25% 0.02 264.05deg);
-  --chi-color-on-surface-variant: oklch(75% 0.02 264.05deg);
-  --chi-color-surface-container: oklch(20% 0.01 264.05deg);
-  --chi-color-surface-container-low: oklch(17% 0.005 264.05deg);
-  --chi-color-surface-container-high: oklch(25% 0.01 264.05deg);
-  --chi-color-surface-container-highest: oklch(30% 0.01 264.05deg);
-
-  --chi-color-surface-0: var(--chi-color-surface);
-  --chi-color-surface-1: oklch(18% 0.01 264.05deg);
-  --chi-color-surface-2: oklch(21% 0.01 264.05deg);
-  --chi-color-surface-3: oklch(24% 0.01 264.05deg);
-  --chi-color-surface-4: oklch(26% 0.01 264.05deg);
-  --chi-color-surface-5: oklch(28% 0.01 264.05deg);
-
-  --chi-color-outline: oklch(60% 0.02 264.05deg);
-  --chi-color-outline-variant: oklch(35% 0.02 264.05deg);
-
-  --chi-color-inverse-surface: oklch(90% 0.005 264.05deg);
-  --chi-color-inverse-on-surface: oklch(25% 0.01 264.05deg);
-  --chi-color-inverse-primary: oklch(49.4% 0.163 264.05deg);
 }

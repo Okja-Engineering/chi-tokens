@@ -1,58 +1,32 @@
 /**
  * Chi Design System - Shadow Tokens
- * Elevation/shadow tokens for light and dark themes
- * Migrated from elevation tokens
+ * Elevation shadows with automatic light/dark mode
  */
 
-:root {
-  /* Light mode shadows (default) */
-  --chi-elevation-level0: none;
-  --chi-elevation-level1: 0px 1px 2px 0px rgb(0 0 0 / 30%),
-    0px 1px 3px 1px rgb(0 0 0 / 15%);
-  --chi-elevation-level2: 0px 1px 2px 0px rgb(0 0 0 / 30%),
-    0px 2px 6px 2px rgb(0 0 0 / 15%);
-  --chi-elevation-level3: 0px 1px 3px 0px rgb(0 0 0 / 30%),
-    0px 4px 8px 3px rgb(0 0 0 / 15%);
-  --chi-elevation-level4: 0px 2px 3px 0px rgb(0 0 0 / 30%),
-    0px 6px 10px 4px rgb(0 0 0 / 15%);
-  --chi-elevation-level5: 0px 4px 4px 0px rgb(0 0 0 / 30%),
-    0px 8px 12px 6px rgb(0 0 0 / 15%);
-
-  /* Radix-style aliases */
-  --shadow-1: var(--chi-elevation-level1);
-  --shadow-2: var(--chi-elevation-level2);
-  --shadow-3: var(--chi-elevation-level3);
-  --shadow-4: var(--chi-elevation-level4);
-  --shadow-5: var(--chi-elevation-level5);
-}
-
-/* Dark mode shadow adjustments */
-@media (prefers-color-scheme: dark) {
+@layer tokens {
   :root {
-    /* Darker shadows with less opacity for dark mode */
-    --chi-elevation-level1: 0px 1px 2px 0px rgb(0 0 0 / 50%),
-      0px 1px 3px 1px rgb(0 0 0 / 25%);
-    --chi-elevation-level2: 0px 1px 2px 0px rgb(0 0 0 / 50%),
-      0px 2px 6px 2px rgb(0 0 0 / 25%);
-    --chi-elevation-level3: 0px 1px 3px 0px rgb(0 0 0 / 50%),
-      0px 4px 8px 3px rgb(0 0 0 / 25%);
-    --chi-elevation-level4: 0px 2px 3px 0px rgb(0 0 0 / 50%),
-      0px 6px 10px 4px rgb(0 0 0 / 25%);
-    --chi-elevation-level5: 0px 4px 4px 0px rgb(0 0 0 / 50%),
-      0px 8px 12px 6px rgb(0 0 0 / 25%);
-  }
-}
+    color-scheme: light dark;
 
-[data-theme='dark'] {
-  /* Explicit dark theme shadows */
-  --chi-elevation-level1: 0px 1px 2px 0px rgb(0 0 0 / 50%),
-    0px 1px 3px 1px rgb(0 0 0 / 25%);
-  --chi-elevation-level2: 0px 1px 2px 0px rgb(0 0 0 / 50%),
-    0px 2px 6px 2px rgb(0 0 0 / 25%);
-  --chi-elevation-level3: 0px 1px 3px 0px rgb(0 0 0 / 50%),
-    0px 4px 8px 3px rgb(0 0 0 / 25%);
-  --chi-elevation-level4: 0px 2px 3px 0px rgb(0 0 0 / 50%),
-    0px 6px 10px 4px rgb(0 0 0 / 25%);
-  --chi-elevation-level5: 0px 4px 4px 0px rgb(0 0 0 / 50%),
-    0px 8px 12px 6px rgb(0 0 0 / 25%);
+    --shadow-0: none;
+    --shadow-1: light-dark(
+      0px 1px 2px 0px rgb(0 0 0 / 30%), 0px 1px 3px 1px rgb(0 0 0 / 15%),
+      0px 1px 2px 0px rgb(0 0 0 / 50%), 0px 1px 3px 1px rgb(0 0 0 / 25%)
+    );
+    --shadow-2: light-dark(
+      0px 1px 2px 0px rgb(0 0 0 / 30%), 0px 2px 6px 2px rgb(0 0 0 / 15%),
+      0px 1px 2px 0px rgb(0 0 0 / 50%), 0px 2px 6px 2px rgb(0 0 0 / 25%)
+    );
+    --shadow-3: light-dark(
+      0px 1px 3px 0px rgb(0 0 0 / 30%), 0px 4px 8px 3px rgb(0 0 0 / 15%),
+      0px 1px 3px 0px rgb(0 0 0 / 50%), 0px 4px 8px 3px rgb(0 0 0 / 25%)
+    );
+    --shadow-4: light-dark(
+      0px 2px 3px 0px rgb(0 0 0 / 30%), 0px 6px 10px 4px rgb(0 0 0 / 15%),
+      0px 2px 3px 0px rgb(0 0 0 / 50%), 0px 6px 10px 4px rgb(0 0 0 / 25%)
+    );
+    --shadow-5: light-dark(
+      0px 4px 4px 0px rgb(0 0 0 / 30%), 0px 8px 12px 6px rgb(0 0 0 / 15%),
+      0px 4px 4px 0px rgb(0 0 0 / 50%), 0px 8px 12px 6px rgb(0 0 0 / 25%)
+    );
+  }
 }

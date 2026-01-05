@@ -1,327 +1,251 @@
 /**
  * Chi Design System - Token Base
- * Aggregator that imports all token categories
- * Following Radix Themes pattern
- */
-
-/**
- * Chi Design System - Semantic Color Mappings
- * Maps color scales to semantic names
- * This will be populated during color system reorganization
- */
-
-/* Placeholder - will import individual color scales and create semantic mappings */
-
-/**
- * Chi Design System - Cursor Tokens
- * Cursor definitions
- */
-
-.chi-themes {
-  /* Icon sizes - migrated from system-tokens */
-  --chi-icon-size-small: calc(18px * var(--scaling, 1));
-  --chi-icon-size-medium: calc(24px * var(--scaling, 1));
-  --chi-icon-size-large: calc(36px * var(--scaling, 1));
-  --chi-icon-size-xlarge: calc(48px * var(--scaling, 1));
-
-  /* Cursor styles */
-  --cursor-default: default;
-  --cursor-pointer: pointer;
-  --cursor-not-allowed: not-allowed;
-  --cursor-text: text;
-  --cursor-move: move;
-  --cursor-grab: grab;
-  --cursor-grabbing: grabbing;
-}
-
-/**
- * Chi Design System - Layout Tokens
- * Layout-related tokens (imports scaling + space)
+ * Aggregates all token categories within @layer tokens
  */
 
 /**
  * Chi Design System - Scaling Tokens
  * Global scaling factor for responsive sizing (90%-110%)
- * Following Radix Themes pattern
  */
 
-:root {
-  /* Default scaling factor - can be overridden with data-scaling attribute */
-  --scaling: 1;
-}
+@layer tokens {
+  :root {
+    --scaling: 1;
+  }
 
-/* Optional scaling variants (can be enabled via data-scaling attribute) */
+  [data-scaling='90'] {
+    --scaling: 0.9;
+  }
 
-[data-scaling='90%'] {
-  --scaling: 0.9;
-}
+  [data-scaling='95'] {
+    --scaling: 0.95;
+  }
 
-[data-scaling='95%'] {
-  --scaling: 0.95;
-}
+  [data-scaling='100'] {
+    --scaling: 1;
+  }
 
-[data-scaling='100%'] {
-  --scaling: 1;
-}
+  [data-scaling='105'] {
+    --scaling: 1.05;
+  }
 
-[data-scaling='105%'] {
-  --scaling: 1.05;
-}
-
-[data-scaling='110%'] {
-  --scaling: 1.1;
+  [data-scaling='110'] {
+    --scaling: 1.1;
+  }
 }
 
 /**
  * Chi Design System - Spacing Tokens
- * Spacing scale following Radix Themes pattern
- * Uses 4px base unit with --scaling support
+ * Spacing scale using 4px base unit with scaling support
  */
 
-.chi-themes {
-  /* Spacing scale (9 steps) - follows 4px/8px base */
-  --space-1: calc(4px * var(--scaling, 1));
-  --space-2: calc(8px * var(--scaling, 1));
-  --space-3: calc(12px * var(--scaling, 1));
-  --space-4: calc(16px * var(--scaling, 1));
-  --space-5: calc(24px * var(--scaling, 1));
-  --space-6: calc(32px * var(--scaling, 1));
-  --space-7: calc(40px * var(--scaling, 1));
-  --space-8: calc(48px * var(--scaling, 1));
-  --space-9: calc(64px * var(--scaling, 1));
-}
-
-.chi-themes {
-  /* Container widths */
-  --container-1: 448px;
-  --container-2: 688px;
-  --container-3: 880px;
-  --container-4: 1136px;
-
-  /* Viewport units */
-  --viewport-width: 100vw;
-  --viewport-height: 100vh;
-}
-
-/**
- * Chi Design System - Radius Tokens
- * Border radius tokens with scaling support
- * Migrated from shape-corner tokens
- */
-
-:root {
-  /* Radius factor for variants (none/small/medium/large) */
-  --radius-factor: 1;
-}
-
-[data-radius='none'] {
-  --radius-factor: 0;
-}
-
-[data-radius='small'] {
-  --radius-factor: 0.75;
-}
-
-[data-radius='medium'] {
-  --radius-factor: 1;
-}
-
-[data-radius='large'] {
-  --radius-factor: 1.5;
-}
-
-.chi-themes {
-  /* Border radius scale with scaling and radius factor support */
-  --chi-shape-corner-none: 0;
-  --chi-shape-corner-extra-small: calc(4px * var(--scaling, 1) * var(--radius-factor, 1));
-  --chi-shape-corner-small: calc(8px * var(--scaling, 1) * var(--radius-factor, 1));
-  --chi-shape-corner-medium: calc(12px * var(--scaling, 1) * var(--radius-factor, 1));
-  --chi-shape-corner-large: calc(16px * var(--scaling, 1) * var(--radius-factor, 1));
-  --chi-shape-corner-extra-large: calc(28px * var(--scaling, 1) * var(--radius-factor, 1));
-  --chi-shape-corner-full: 9999px;
-
-  /* Radix-style aliases */
-  --radius-1: var(--chi-shape-corner-extra-small);
-  --radius-2: var(--chi-shape-corner-small);
-  --radius-3: var(--chi-shape-corner-medium);
-  --radius-4: var(--chi-shape-corner-large);
-  --radius-5: var(--chi-shape-corner-extra-large);
-  --radius-full: var(--chi-shape-corner-full);
-}
-
-/**
- * Chi Design System - Shadow Tokens
- * Elevation/shadow tokens for light and dark themes
- * Migrated from elevation tokens
- */
-
-:root {
-  /* Light mode shadows (default) */
-  --chi-elevation-level0: none;
-  --chi-elevation-level1: 0px 1px 2px 0px rgb(0 0 0 / 30%),
-    0px 1px 3px 1px rgb(0 0 0 / 15%);
-  --chi-elevation-level2: 0px 1px 2px 0px rgb(0 0 0 / 30%),
-    0px 2px 6px 2px rgb(0 0 0 / 15%);
-  --chi-elevation-level3: 0px 1px 3px 0px rgb(0 0 0 / 30%),
-    0px 4px 8px 3px rgb(0 0 0 / 15%);
-  --chi-elevation-level4: 0px 2px 3px 0px rgb(0 0 0 / 30%),
-    0px 6px 10px 4px rgb(0 0 0 / 15%);
-  --chi-elevation-level5: 0px 4px 4px 0px rgb(0 0 0 / 30%),
-    0px 8px 12px 6px rgb(0 0 0 / 15%);
-
-  /* Radix-style aliases */
-  --shadow-1: var(--chi-elevation-level1);
-  --shadow-2: var(--chi-elevation-level2);
-  --shadow-3: var(--chi-elevation-level3);
-  --shadow-4: var(--chi-elevation-level4);
-  --shadow-5: var(--chi-elevation-level5);
-}
-
-/* Dark mode shadow adjustments */
-
-@media (prefers-color-scheme: dark) {
+@layer tokens {
   :root {
-    /* Darker shadows with less opacity for dark mode */
-    --chi-elevation-level1: 0px 1px 2px 0px rgb(0 0 0 / 50%),
-      0px 1px 3px 1px rgb(0 0 0 / 25%);
-    --chi-elevation-level2: 0px 1px 2px 0px rgb(0 0 0 / 50%),
-      0px 2px 6px 2px rgb(0 0 0 / 25%);
-    --chi-elevation-level3: 0px 1px 3px 0px rgb(0 0 0 / 50%),
-      0px 4px 8px 3px rgb(0 0 0 / 25%);
-    --chi-elevation-level4: 0px 2px 3px 0px rgb(0 0 0 / 50%),
-      0px 6px 10px 4px rgb(0 0 0 / 25%);
-    --chi-elevation-level5: 0px 4px 4px 0px rgb(0 0 0 / 50%),
-      0px 8px 12px 6px rgb(0 0 0 / 25%);
+    --space-1: calc(4px * var(--scaling, 1));
+    --space-2: calc(8px * var(--scaling, 1));
+    --space-3: calc(12px * var(--scaling, 1));
+    --space-4: calc(16px * var(--scaling, 1));
+    --space-5: calc(24px * var(--scaling, 1));
+    --space-6: calc(32px * var(--scaling, 1));
+    --space-7: calc(40px * var(--scaling, 1));
+    --space-8: calc(48px * var(--scaling, 1));
+    --space-9: calc(64px * var(--scaling, 1));
   }
-}
-
-[data-theme='dark'] {
-  /* Explicit dark theme shadows */
-  --chi-elevation-level1: 0px 1px 2px 0px rgb(0 0 0 / 50%),
-    0px 1px 3px 1px rgb(0 0 0 / 25%);
-  --chi-elevation-level2: 0px 1px 2px 0px rgb(0 0 0 / 50%),
-    0px 2px 6px 2px rgb(0 0 0 / 25%);
-  --chi-elevation-level3: 0px 1px 3px 0px rgb(0 0 0 / 50%),
-    0px 4px 8px 3px rgb(0 0 0 / 25%);
-  --chi-elevation-level4: 0px 2px 3px 0px rgb(0 0 0 / 50%),
-    0px 6px 10px 4px rgb(0 0 0 / 25%);
-  --chi-elevation-level5: 0px 4px 4px 0px rgb(0 0 0 / 50%),
-    0px 8px 12px 6px rgb(0 0 0 / 25%);
 }
 
 /**
  * Chi Design System - Typography Tokens
  * Typography scale with scaling support
- * Migrated from typescale tokens
  */
 
-:root {
-  /* Base font families - single source of truth */
-  --chi-font-family-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --chi-font-family-serif: georgia, 'Times New Roman', serif;
-  --chi-font-family-mono: 'SF Mono', monaco, 'Courier New', monospace;
+@layer tokens {
+  :root {
+    /* Font families */
+    --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-serif: georgia, 'Times New Roman', serif;
+    --font-mono: 'SF Mono', monaco, 'Courier New', monospace;
+
+    /* Font sizes */
+    --font-size-1: calc(12px * var(--scaling, 1));
+    --font-size-2: calc(14px * var(--scaling, 1));
+    --font-size-3: calc(16px * var(--scaling, 1));
+    --font-size-4: calc(18px * var(--scaling, 1));
+    --font-size-5: calc(20px * var(--scaling, 1));
+    --font-size-6: calc(24px * var(--scaling, 1));
+    --font-size-7: calc(28px * var(--scaling, 1));
+    --font-size-8: calc(35px * var(--scaling, 1));
+    --font-size-9: calc(60px * var(--scaling, 1));
+
+    /* Font weights */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* Line heights */
+    --line-height-1: calc(16px * var(--scaling, 1));
+    --line-height-2: calc(20px * var(--scaling, 1));
+    --line-height-3: calc(24px * var(--scaling, 1));
+    --line-height-4: calc(26px * var(--scaling, 1));
+    --line-height-5: calc(28px * var(--scaling, 1));
+    --line-height-6: calc(30px * var(--scaling, 1));
+    --line-height-7: calc(36px * var(--scaling, 1));
+    --line-height-8: calc(40px * var(--scaling, 1));
+    --line-height-9: calc(60px * var(--scaling, 1));
+
+    /* Letter spacing */
+    --letter-spacing-1: 0.0025em;
+    --letter-spacing-2: 0em;
+    --letter-spacing-3: -0.0025em;
+  }
 }
 
-.chi-themes {
-  /* Font sizes with scaling support */
-  --font-size-1: calc(12px * var(--scaling, 1));
-  --font-size-2: calc(14px * var(--scaling, 1));
-  --font-size-3: calc(16px * var(--scaling, 1));
-  --font-size-4: calc(18px * var(--scaling, 1));
-  --font-size-5: calc(20px * var(--scaling, 1));
-  --font-size-6: calc(24px * var(--scaling, 1));
-  --font-size-7: calc(28px * var(--scaling, 1));
-  --font-size-8: calc(35px * var(--scaling, 1));
-  --font-size-9: calc(60px * var(--scaling, 1));
+/**
+ * Chi Design System - Radius Tokens
+ * Border radius tokens with scaling support
+ */
 
-  /* Font weights */
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
+@layer tokens {
+  :root {
+    /* Radius factor for variants */
+    --radius-factor: 1;
 
-  /* Line heights with scaling support */
-  --line-height-1: calc(16px * var(--scaling, 1));
-  --line-height-2: calc(20px * var(--scaling, 1));
-  --line-height-3: calc(24px * var(--scaling, 1));
-  --line-height-4: calc(26px * var(--scaling, 1));
-  --line-height-5: calc(28px * var(--scaling, 1));
-  --line-height-6: calc(30px * var(--scaling, 1));
-  --line-height-7: calc(36px * var(--scaling, 1));
-  --line-height-8: calc(40px * var(--scaling, 1));
-  --line-height-9: calc(60px * var(--scaling, 1));
+    /* Border radius scale */
+    --radius-none: 0;
+    --radius-xs: calc(4px * var(--scaling, 1) * var(--radius-factor, 1));
+    --radius-sm: calc(8px * var(--scaling, 1) * var(--radius-factor, 1));
+    --radius-md: calc(12px * var(--scaling, 1) * var(--radius-factor, 1));
+    --radius-lg: calc(16px * var(--scaling, 1) * var(--radius-factor, 1));
+    --radius-xl: calc(28px * var(--scaling, 1) * var(--radius-factor, 1));
+    --radius-full: 9999px;
+  }
 
-  /* Letter spacing */
-  --letter-spacing-1: 0.0025em;
-  --letter-spacing-2: 0em;
-  --letter-spacing-3: -0.0025em;
+  [data-radius='none'] {
+    --radius-factor: 0;
+  }
 
-  /* Okja Legacy Typescale - preserving existing tokens for backwards compatibility */
-  --chi-typescale-label-medium-font: var(--chi-font-family-sans);
-  --chi-typescale-label-medium-size: calc(0.75rem * var(--scaling, 1));
-  --chi-typescale-label-medium-weight: 500;
-  --chi-typescale-label-medium-line-height: calc(1rem * var(--scaling, 1));
-  --chi-typescale-label-medium-tracking: calc(0.0063rem * var(--scaling, 1));
+  [data-radius='small'] {
+    --radius-factor: 0.75;
+  }
 
-  --chi-typescale-title-small-font: var(--chi-font-family-sans);
-  --chi-typescale-title-small-size: calc(0.875rem * var(--scaling, 1));
-  --chi-typescale-title-small-weight: 500;
-  --chi-typescale-title-small-line-height: calc(1.25rem * var(--scaling, 1));
-  --chi-typescale-title-small-tracking: 0;
+  [data-radius='medium'] {
+    --radius-factor: 1;
+  }
 
-  --chi-typescale-body-medium-font: var(--chi-font-family-sans);
-  --chi-typescale-body-medium-size: calc(0.875rem * var(--scaling, 1));
-  --chi-typescale-body-medium-weight: 400;
-  --chi-typescale-body-medium-line-height: calc(1.25rem * var(--scaling, 1));
-  --chi-typescale-body-medium-tracking: 0;
+  [data-radius='large'] {
+    --radius-factor: 1.5;
+  }
+}
+
+/**
+ * Chi Design System - Shadow Tokens
+ * Elevation shadows with automatic light/dark mode
+ */
+
+@layer tokens {
+  :root {
+    --csstools-color-scheme--light: initial;
+    color-scheme: light dark;
+
+    --shadow-0: none;
+    --shadow-1: light-dark(
+      0px 1px 2px 0px rgb(0 0 0 / 30%), 0px 1px 3px 1px rgb(0 0 0 / 15%),
+      0px 1px 2px 0px rgb(0 0 0 / 50%), 0px 1px 3px 1px rgb(0 0 0 / 25%)
+    );
+    --shadow-2: light-dark(
+      0px 1px 2px 0px rgb(0 0 0 / 30%), 0px 2px 6px 2px rgb(0 0 0 / 15%),
+      0px 1px 2px 0px rgb(0 0 0 / 50%), 0px 2px 6px 2px rgb(0 0 0 / 25%)
+    );
+    --shadow-3: light-dark(
+      0px 1px 3px 0px rgb(0 0 0 / 30%), 0px 4px 8px 3px rgb(0 0 0 / 15%),
+      0px 1px 3px 0px rgb(0 0 0 / 50%), 0px 4px 8px 3px rgb(0 0 0 / 25%)
+    );
+    --shadow-4: light-dark(
+      0px 2px 3px 0px rgb(0 0 0 / 30%), 0px 6px 10px 4px rgb(0 0 0 / 15%),
+      0px 2px 3px 0px rgb(0 0 0 / 50%), 0px 6px 10px 4px rgb(0 0 0 / 25%)
+    );
+    --shadow-5: light-dark(
+      0px 4px 4px 0px rgb(0 0 0 / 30%), 0px 8px 12px 6px rgb(0 0 0 / 15%),
+      0px 4px 4px 0px rgb(0 0 0 / 50%), 0px 8px 12px 6px rgb(0 0 0 / 25%)
+    );
+  }
+  @media (prefers-color-scheme: dark) {
+  :root {
+    --csstools-color-scheme--light:  ;
+  }
+  }
 }
 
 /**
  * Chi Design System - Motion Tokens
  * Animation duration and easing tokens
- * Migrated from motion tokens in system-tokens
  */
 
-:root {
-  /* Durations */
-  --chi-motion-duration-short1: 50ms;
-  --chi-motion-duration-short2: 100ms;
-  --chi-motion-duration-short3: 150ms;
-  --chi-motion-duration-short4: 200ms;
-  --chi-motion-duration-medium1: 250ms;
-  --chi-motion-duration-medium2: 300ms;
-  --chi-motion-duration-medium3: 350ms;
-  --chi-motion-duration-medium4: 400ms;
-  --chi-motion-duration-long1: 450ms;
-  --chi-motion-duration-long2: 500ms;
-  --chi-motion-duration-long3: 550ms;
-  --chi-motion-duration-long4: 600ms;
-  --chi-motion-duration-extra-long1: 700ms;
-  --chi-motion-duration-extra-long2: 800ms;
-  --chi-motion-duration-extra-long3: 900ms;
-  --chi-motion-duration-extra-long4: 1000ms;
+@layer tokens {
+  :root {
+    /* Durations */
+    --duration-instant: 0ms;
+    --duration-short1: 50ms;
+    --duration-short2: 100ms;
+    --duration-short3: 150ms;
+    --duration-short4: 200ms;
+    --duration-medium1: 250ms;
+    --duration-medium2: 300ms;
+    --duration-medium3: 350ms;
+    --duration-medium4: 400ms;
+    --duration-long1: 450ms;
+    --duration-long2: 500ms;
+    --duration-long3: 550ms;
+    --duration-long4: 600ms;
+    --duration-extra-long1: 700ms;
+    --duration-extra-long2: 800ms;
+    --duration-extra-long3: 900ms;
+    --duration-extra-long4: 1000ms;
 
-  /* Simplified durations (Radix-style aliases) */
-  --duration-instant: 0ms;
-  --duration-fast: 100ms;
-  --duration-normal: 200ms;
-  --duration-slow: 300ms;
-  --duration-slower: 400ms;
+    /* Easing functions */
+    --easing-linear: linear;
+    --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+    --easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+    --easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
+    --easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+    --easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+    --easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  }
+}
 
-  /* Easing functions */
-  --chi-motion-easing-linear: linear;
-  --chi-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
-  --chi-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
-  --chi-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
-  --chi-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
-  --chi-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
-  --chi-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+/**
+ * Chi Design System - Cursor & Icon Tokens
+ */
 
-  /* Radix-style easing aliases */
-  --easing-linear: var(--chi-motion-easing-linear);
-  --easing-ease: ease;
-  --easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --easing-emphasized: var(--chi-motion-easing-emphasized);
+@layer tokens {
+  :root {
+    /* Icon sizes */
+    --icon-size-sm: calc(18px * var(--scaling, 1));
+    --icon-size-md: calc(24px * var(--scaling, 1));
+    --icon-size-lg: calc(36px * var(--scaling, 1));
+    --icon-size-xl: calc(48px * var(--scaling, 1));
+
+    /* Cursor styles */
+    --cursor-default: default;
+    --cursor-pointer: pointer;
+    --cursor-not-allowed: not-allowed;
+    --cursor-text: text;
+    --cursor-move: move;
+    --cursor-grab: grab;
+    --cursor-grabbing: grabbing;
+  }
+}
+
+/**
+ * Chi Design System - Layout Tokens
+ */
+
+@layer tokens {
+  :root {
+    /* Container max-widths */
+    --container-1: 448px;
+    --container-2: 688px;
+    --container-3: 880px;
+    --container-4: 1136px;
+  }
 }

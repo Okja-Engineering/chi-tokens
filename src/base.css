@@ -1,13 +1,13 @@
 /**
  * Chi Design System - Token Base
- * Aggregator that imports all token categories
- * Following Radix Themes pattern
+ * Aggregates all token categories within @layer tokens
  */
 
-@import './color.css';
-@import './cursor.css';
-@import './layout.css';
+@import './scaling.css';
+@import './space.css';
+@import './typography.css';
 @import './radius.css';
 @import './shadow.css';
-@import './typography.css';
 @import './motion.css';
+@import './cursor.css';
+@import './layout.css';

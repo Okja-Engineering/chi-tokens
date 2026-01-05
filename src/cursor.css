@@ -1,21 +1,22 @@
 /**
- * Chi Design System - Cursor Tokens
- * Cursor definitions
+ * Chi Design System - Cursor & Icon Tokens
  */
 
-.chi-themes {
-  /* Icon sizes - migrated from system-tokens */
-  --chi-icon-size-small: calc(18px * var(--scaling, 1));
-  --chi-icon-size-medium: calc(24px * var(--scaling, 1));
-  --chi-icon-size-large: calc(36px * var(--scaling, 1));
-  --chi-icon-size-xlarge: calc(48px * var(--scaling, 1));
+@layer tokens {
+  :root {
+    /* Icon sizes */
+    --icon-size-sm: calc(18px * var(--scaling, 1));
+    --icon-size-md: calc(24px * var(--scaling, 1));
+    --icon-size-lg: calc(36px * var(--scaling, 1));
+    --icon-size-xl: calc(48px * var(--scaling, 1));
 
-  /* Cursor styles */
-  --cursor-default: default;
-  --cursor-pointer: pointer;
-  --cursor-not-allowed: not-allowed;
-  --cursor-text: text;
-  --cursor-move: move;
-  --cursor-grab: grab;
-  --cursor-grabbing: grabbing;
+    /* Cursor styles */
+    --cursor-default: default;
+    --cursor-pointer: pointer;
+    --cursor-not-allowed: not-allowed;
+    --cursor-text: text;
+    --cursor-move: move;
+    --cursor-grab: grab;
+    --cursor-grabbing: grabbing;
+  }
 }

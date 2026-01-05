@@ -1,6 +1,8 @@
 # @okja/chi-tokens
 
-Design tokens for the Chi design system - colors, typography, spacing, radius, shadow, and motion.
+Low-level CSS design tokens for building themes. **If you're building an application, use `@okja/chi-themes` instead.**
+
+This package provides the foundational design tokens consumed by `@okja/chi-themes`. It's useful if you're creating custom themes or need granular control over the design system.
 
 ## Installation
 
@@ -10,106 +12,103 @@ npm install @okja/chi-tokens
 
 ## Usage
 
-### Import all tokens
-
-```javascript
-import tokens from '@okja/chi-tokens';
-
-console.log(tokens.spacing[4]); // "16px"
-console.log(tokens.radius.md);  // "12px"
+```css
+@import '@okja/chi-tokens/tokens.css';
+@import '@okja/chi-tokens/colors/grayscale.css';
 ```
 
-### Import specific color palettes
+Tokens are on `:root` and wrapped in `@layer tokens`.
 
-```javascript
-import grayscale from '@okja/chi-tokens/colors/grayscale';
-import blue from '@okja/chi-tokens/colors/blue';
-import purple from '@okja/chi-tokens/colors/purple';
-
-console.log(grayscale.light.primary);     // "oklch(49.4% 0.163 264.05)"
-console.log(grayscale.dark.surface);      // "oklch(15% 0.005 264.05)"
-```
-
-## Available Tokens
-
-### Typography
-
-| Token | Values |
-|-------|--------|
-| `font-family` | `sans`, `serif`, `mono` |
-| `font-size` | `1`-`9` (12px-60px) |
-| `font-weight` | `light`, `regular`, `medium`, `bold` |
-| `line-height` | `1`-`9` (16px-60px) |
-| `letter-spacing` | `1`-`3` |
+## Token Reference
 
 ### Spacing
 
 | Token | Value |
 |-------|-------|
-| `1` | 4px |
-| `2` | 8px |
-| `3` | 12px |
-| `4` | 16px |
-| `5` | 24px |
-| `6` | 32px |
-| `7` | 40px |
-| `8` | 48px |
-| `9` | 64px |
+| `--space-1` | 4px |
+| `--space-2` | 8px |
+| `--space-3` | 12px |
+| `--space-4` | 16px |
+| `--space-5` | 24px |
+| `--space-6` | 32px |
+| `--space-7` | 40px |
+| `--space-8` | 48px |
+| `--space-9` | 64px |
+
+### Typography
+
+| Token | Value |
+|-------|-------|
+| `--font-sans` | system-ui, -apple-system, 'Segoe UI', sans-serif |
+| `--font-serif` | georgia, 'Times New Roman', serif |
+| `--font-mono` | 'SF Mono', monaco, 'Courier New', monospace |
+| `--font-size-1` to `--font-size-9` | 12px to 60px |
+| `--font-weight-light/regular/medium/bold` | 300/400/500/700 |
+| `--line-height-1` to `--line-height-9` | 16px to 60px |
 
 ### Radius
 
 | Token | Value |
 |-------|-------|
-| `none` | 0 |
-| `xs` | 4px |
-| `sm` | 8px |
-| `md` | 12px |
-| `lg` | 16px |
-| `xl` | 28px |
-| `full` | 9999px |
+| `--radius-none` | 0 |
+| `--radius-xs` | 4px |
+| `--radius-sm` | 8px |
+| `--radius-md` | 12px |
+| `--radius-lg` | 16px |
+| `--radius-xl` | 28px |
+| `--radius-full` | 9999px |
 
 ### Shadow
 
-Shadows are provided for both `light` and `dark` modes with levels `1`-`5`.
-
-```javascript
-tokens.shadow.light[3]  // Light mode, level 3
-tokens.shadow.dark[3]   // Dark mode, level 3
-```
+| Token | Description |
+|-------|-------------|
+| `--shadow-0` | none |
+| `--shadow-1` | Subtle |
+| `--shadow-2` | Low |
+| `--shadow-3` | Medium |
+| `--shadow-4` | High |
+| `--shadow-5` | Highest |
 
 ### Motion
 
-| Token | Values |
-|-------|--------|
-| `duration` | `instant`, `short1`-`short4`, `medium1`-`medium4`, `long1`-`long4`, `extra-long1`-`extra-long4` |
-| `easing` | `linear`, `ease`, `ease-in`, `ease-out`, `ease-in-out`, `standard`, `emphasized`, etc. |
+| Token | Value |
+|-------|-------|
+| `--duration-instant` | 0ms |
+| `--duration-short1` to `short4` | 50-200ms |
+| `--duration-medium1` to `medium4` | 250-400ms |
+| `--duration-long1` to `long4` | 450-600ms |
+| `--easing-standard` | Standard easing |
+| `--easing-emphasized` | Emphasized easing |
 
-### Other
+### Colors
 
 | Token | Description |
 |-------|-------------|
-| `container` | Max-width breakpoints (`1`-`4`) |
-| `icon-size` | Icon sizes (`sm`, `md`, `lg`, `xl`) |
-| `scaling` | Scale factors (`90`-`110`) |
-| `radius-factor` | Radius multipliers (`none`, `small`, `medium`, `large`) |
+| `--color-primary` | Primary brand |
+| `--color-on-primary` | Text on primary |
+| `--color-surface` | Surface background |
+| `--color-on-surface` | Text on surface |
+| `--color-error` | Error states |
+| `--color-outline` | Borders |
 
 ## Color Palettes
 
-Each color palette (`grayscale`, `blue`, `purple`) includes light and dark mode variants:
+- `colors/grayscale.css` - Neutral (default)
+- `colors/blue.css` - Corporate blue
+- `colors/purple.css` - Creative purple
 
-**Primary colors**: `primary`, `on-primary`, `primary-container`, `on-primary-container`
+Colors use `light-dark()` for automatic dark mode:
 
-**Secondary colors**: `secondary`, `on-secondary`, `secondary-container`, `on-secondary-container`
+```css
+--color-surface: light-dark(oklch(99% 0.005 264deg), oklch(15% 0.005 264deg));
+```
 
-**Tertiary colors**: `tertiary`, `on-tertiary`, `tertiary-container`, `on-tertiary-container`
+## Architecture
 
-**Error colors**: `error`, `on-error`, `error-container`, `on-error-container`
-
-**Surface colors**: `surface`, `on-surface`, `surface-variant`, `on-surface-variant`, `surface-container`, `surface-container-low`, `surface-container-high`, `surface-container-highest`
-
-**Utility colors**: `outline`, `outline-variant`, `inverse-surface`, `inverse-on-surface`, `inverse-primary`, `scrim`, `shadow`
-
-Colors use the OKLCH color space for perceptual uniformity.
+- **CSS Cascade Layers** - `@layer tokens` for clean cascade control
+- **`light-dark()` function** - Automatic dark mode colors
+- **OKLCH color space** - Perceptual uniformity
+- **Scaling support** - `var(--scaling, 1)` multiplier
 
 ## License
 

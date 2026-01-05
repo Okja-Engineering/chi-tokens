@@ -1,19 +1,13 @@
 /**
  * Chi Design System - Layout Tokens
- * Layout-related tokens (imports scaling + space)
  */
 
-@import './scaling.css';
-@import './space.css';
-
-.chi-themes {
-  /* Container widths */
-  --container-1: 448px;
-  --container-2: 688px;
-  --container-3: 880px;
-  --container-4: 1136px;
-
-  /* Viewport units */
-  --viewport-width: 100vw;
-  --viewport-height: 100vh;
+@layer tokens {
+  :root {
+    /* Container max-widths */
+    --container-1: 448px;
+    --container-2: 688px;
+    --container-3: 880px;
+    --container-4: 1136px;
+  }
 }
