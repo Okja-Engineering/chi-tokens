@@ -1,49 +1,36 @@
 /**
  * Chi Design System - Motion Tokens
  * Animation duration and easing tokens
- * Migrated from motion tokens in system-tokens
  */
 
-:root {
-  /* Durations */
-  --chi-motion-duration-short1: 50ms;
-  --chi-motion-duration-short2: 100ms;
-  --chi-motion-duration-short3: 150ms;
-  --chi-motion-duration-short4: 200ms;
-  --chi-motion-duration-medium1: 250ms;
-  --chi-motion-duration-medium2: 300ms;
-  --chi-motion-duration-medium3: 350ms;
-  --chi-motion-duration-medium4: 400ms;
-  --chi-motion-duration-long1: 450ms;
-  --chi-motion-duration-long2: 500ms;
-  --chi-motion-duration-long3: 550ms;
-  --chi-motion-duration-long4: 600ms;
-  --chi-motion-duration-extra-long1: 700ms;
-  --chi-motion-duration-extra-long2: 800ms;
-  --chi-motion-duration-extra-long3: 900ms;
-  --chi-motion-duration-extra-long4: 1000ms;
+@layer tokens {
+  :root {
+    /* Durations */
+    --duration-instant: 0ms;
+    --duration-short1: 50ms;
+    --duration-short2: 100ms;
+    --duration-short3: 150ms;
+    --duration-short4: 200ms;
+    --duration-medium1: 250ms;
+    --duration-medium2: 300ms;
+    --duration-medium3: 350ms;
+    --duration-medium4: 400ms;
+    --duration-long1: 450ms;
+    --duration-long2: 500ms;
+    --duration-long3: 550ms;
+    --duration-long4: 600ms;
+    --duration-extra-long1: 700ms;
+    --duration-extra-long2: 800ms;
+    --duration-extra-long3: 900ms;
+    --duration-extra-long4: 1000ms;
 
-  /* Simplified durations (Radix-style aliases) */
-  --duration-instant: 0ms;
-  --duration-fast: 100ms;
-  --duration-normal: 200ms;
-  --duration-slow: 300ms;
-  --duration-slower: 400ms;
-
-  /* Easing functions */
-  --chi-motion-easing-linear: linear;
-  --chi-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
-  --chi-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
-  --chi-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
-  --chi-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
-  --chi-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
-  --chi-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
-
-  /* Radix-style easing aliases */
-  --easing-linear: var(--chi-motion-easing-linear);
-  --easing-ease: ease;
-  --easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --easing-emphasized: var(--chi-motion-easing-emphasized);
+    /* Easing functions */
+    --easing-linear: linear;
+    --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+    --easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+    --easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
+    --easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+    --easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+    --easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  }
 }

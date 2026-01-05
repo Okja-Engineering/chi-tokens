@@ -1,31 +1,30 @@
 /**
  * Chi Design System - Scaling Tokens
  * Global scaling factor for responsive sizing (90%-110%)
- * Following Radix Themes pattern
  */
 
-:root {
-  /* Default scaling factor - can be overridden with data-scaling attribute */
-  --scaling: 1;
-}
+@layer tokens {
+  :root {
+    --scaling: 1;
+  }
 
-/* Optional scaling variants (can be enabled via data-scaling attribute) */
-[data-scaling='90%'] {
-  --scaling: 0.9;
-}
+  [data-scaling='90'] {
+    --scaling: 0.9;
+  }
 
-[data-scaling='95%'] {
-  --scaling: 0.95;
-}
+  [data-scaling='95'] {
+    --scaling: 0.95;
+  }
 
-[data-scaling='100%'] {
-  --scaling: 1;
-}
+  [data-scaling='100'] {
+    --scaling: 1;
+  }
 
-[data-scaling='105%'] {
-  --scaling: 1.05;
-}
+  [data-scaling='105'] {
+    --scaling: 1.05;
+  }
 
-[data-scaling='110%'] {
-  --scaling: 1.1;
+  [data-scaling='110'] {
+    --scaling: 1.1;
+  }
 }

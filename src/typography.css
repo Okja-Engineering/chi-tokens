@@ -1,66 +1,46 @@
 /**
  * Chi Design System - Typography Tokens
  * Typography scale with scaling support
- * Migrated from typescale tokens
  */
 
-:root {
-  /* Base font families - single source of truth */
-  --chi-font-family-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --chi-font-family-serif: georgia, 'Times New Roman', serif;
-  --chi-font-family-mono: 'SF Mono', monaco, 'Courier New', monospace;
-}
+@layer tokens {
+  :root {
+    /* Font families */
+    --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-serif: georgia, 'Times New Roman', serif;
+    --font-mono: 'SF Mono', monaco, 'Courier New', monospace;
 
-.chi-themes {
-  /* Font sizes with scaling support */
-  --font-size-1: calc(12px * var(--scaling, 1));
-  --font-size-2: calc(14px * var(--scaling, 1));
-  --font-size-3: calc(16px * var(--scaling, 1));
-  --font-size-4: calc(18px * var(--scaling, 1));
-  --font-size-5: calc(20px * var(--scaling, 1));
-  --font-size-6: calc(24px * var(--scaling, 1));
-  --font-size-7: calc(28px * var(--scaling, 1));
-  --font-size-8: calc(35px * var(--scaling, 1));
-  --font-size-9: calc(60px * var(--scaling, 1));
+    /* Font sizes */
+    --font-size-1: calc(12px * var(--scaling, 1));
+    --font-size-2: calc(14px * var(--scaling, 1));
+    --font-size-3: calc(16px * var(--scaling, 1));
+    --font-size-4: calc(18px * var(--scaling, 1));
+    --font-size-5: calc(20px * var(--scaling, 1));
+    --font-size-6: calc(24px * var(--scaling, 1));
+    --font-size-7: calc(28px * var(--scaling, 1));
+    --font-size-8: calc(35px * var(--scaling, 1));
+    --font-size-9: calc(60px * var(--scaling, 1));
 
-  /* Font weights */
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
+    /* Font weights */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
 
-  /* Line heights with scaling support */
-  --line-height-1: calc(16px * var(--scaling, 1));
-  --line-height-2: calc(20px * var(--scaling, 1));
-  --line-height-3: calc(24px * var(--scaling, 1));
-  --line-height-4: calc(26px * var(--scaling, 1));
-  --line-height-5: calc(28px * var(--scaling, 1));
-  --line-height-6: calc(30px * var(--scaling, 1));
-  --line-height-7: calc(36px * var(--scaling, 1));
-  --line-height-8: calc(40px * var(--scaling, 1));
-  --line-height-9: calc(60px * var(--scaling, 1));
+    /* Line heights */
+    --line-height-1: calc(16px * var(--scaling, 1));
+    --line-height-2: calc(20px * var(--scaling, 1));
+    --line-height-3: calc(24px * var(--scaling, 1));
+    --line-height-4: calc(26px * var(--scaling, 1));
+    --line-height-5: calc(28px * var(--scaling, 1));
+    --line-height-6: calc(30px * var(--scaling, 1));
+    --line-height-7: calc(36px * var(--scaling, 1));
+    --line-height-8: calc(40px * var(--scaling, 1));
+    --line-height-9: calc(60px * var(--scaling, 1));
 
-  /* Letter spacing */
-  --letter-spacing-1: 0.0025em;
-  --letter-spacing-2: 0em;
-  --letter-spacing-3: -0.0025em;
-
-  /* Okja Legacy Typescale - preserving existing tokens for backwards compatibility */
-  --chi-typescale-label-medium-font: var(--chi-font-family-sans);
-  --chi-typescale-label-medium-size: calc(0.75rem * var(--scaling, 1));
-  --chi-typescale-label-medium-weight: 500;
-  --chi-typescale-label-medium-line-height: calc(1rem * var(--scaling, 1));
-  --chi-typescale-label-medium-tracking: calc(0.0063rem * var(--scaling, 1));
-
-  --chi-typescale-title-small-font: var(--chi-font-family-sans);
-  --chi-typescale-title-small-size: calc(0.875rem * var(--scaling, 1));
-  --chi-typescale-title-small-weight: 500;
-  --chi-typescale-title-small-line-height: calc(1.25rem * var(--scaling, 1));
-  --chi-typescale-title-small-tracking: 0;
-
-  --chi-typescale-body-medium-font: var(--chi-font-family-sans);
-  --chi-typescale-body-medium-size: calc(0.875rem * var(--scaling, 1));
-  --chi-typescale-body-medium-weight: 400;
-  --chi-typescale-body-medium-line-height: calc(1.25rem * var(--scaling, 1));
-  --chi-typescale-body-medium-tracking: 0;
+    /* Letter spacing */
+    --letter-spacing-1: 0.0025em;
+    --letter-spacing-2: 0em;
+    --letter-spacing-3: -0.0025em;
+  }
 }
