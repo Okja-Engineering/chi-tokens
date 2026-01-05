@@ -1,0 +1,13 @@
+/**
+ * Chi Design System - Tokens Entry Point
+ * Exports all design tokens
+ * Following Radix Themes pattern
+ */
+
+/* Import all color scales */
+@import './colors/grayscale.css';
+@import './colors/blue.css';
+@import './colors/purple.css';
+
+/* Import base tokens (aggregator) */
+@import './base.css';
