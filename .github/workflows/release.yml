@@ -2,26 +2,50 @@ name: Release
 
 on:
   workflow_call:
-    outputs:
-      version:
-        description: 'The released version'
-        value: ${{ jobs.version.outputs.version }}
+    secrets:
+      RELEASE_TOKEN:
+        required: true
 
 jobs:
-  version:
-    uses: ./.github/workflows/version.yml
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.RELEASE_TOKEN }}
 
-  tag:
-    needs: version
-    uses: ./.github/workflows/git-tag.yml
-    secrets: inherit
-    with:
-      version: ${{ needs.version.outputs.version }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
 
-  github-release:
-    needs: [version, tag]
-    uses: ./.github/workflows/github-release.yml
-    secrets: inherit
-    with:
-      version: ${{ needs.version.outputs.version }}
-      package: '@okja/chi-tokens'
+      - run: npm install
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump version
+        id: version
+        run: |
+          npm version patch
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Push
+        run: git push origin main --tags
+
+      - name: Publish to npm
+        run: npm publish --access public --provenance
+
+      - name: GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: v${{ steps.version.outputs.version }}
+          generate_release_notes: true
