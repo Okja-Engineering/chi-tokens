@@ -42,25 +42,9 @@ Tokens are on `:root` and wrapped in `@layer tokens`.
 | `--font-sans` | system-ui, -apple-system, 'Segoe UI', sans-serif |
 | `--font-serif` | georgia, 'Times New Roman', serif |
 | `--font-mono` | 'SF Mono', monaco, 'Courier New', monospace |
-| `--font-size-1` to `--font-size-11` | 11px to 57px (M3 aligned) |
+| `--font-size-1` to `--font-size-11` | 11px to 57px |
 | `--font-weight-light/regular/medium/bold` | 300/400/500/700 |
 | `--line-height-1` to `--line-height-11` | 16px to 64px |
-
-#### Font Size Scale (M3 Expressive)
-
-| Token | Value | M3 Role |
-|-------|-------|---------|
-| `--font-size-1` | 11px | label-small |
-| `--font-size-2` | 12px | body-small, label-medium |
-| `--font-size-3` | 14px | body-medium, label-large, title-small |
-| `--font-size-4` | 16px | body-large, title-medium |
-| `--font-size-5` | 22px | title-large |
-| `--font-size-6` | 24px | headline-small |
-| `--font-size-7` | 28px | headline-medium |
-| `--font-size-8` | 32px | headline-large |
-| `--font-size-9` | 36px | display-small |
-| `--font-size-10` | 45px | display-medium |
-| `--font-size-11` | 57px | display-large |
 
 ### Radius
 
@@ -151,52 +135,14 @@ Colors use `light-dark()` for automatic dark mode:
 - **OKLCH color space** - Perceptual uniformity
 - **Scaling support** - `var(--scaling, 1)` multiplier
 
-## Runtime Customization
+## Browser Support
 
-Use data attributes to adjust tokens at runtime.
+Requires browsers supporting:
+- CSS `light-dark()` function
+- OKLCH color space
+- CSS Cascade Layers (`@layer`)
 
-### Scaling
-
-Set `data-scaling` on any element to scale spacing, typography, and radius tokens:
-
-```html
-<html data-scaling="110">
-```
-
-| Value | Multiplier |
-|-------|------------|
-| `90` | 0.9 |
-| `95` | 0.95 |
-| `100` | 1 (default) |
-| `105` | 1.05 |
-| `110` | 1.1 |
-
-### Radius
-
-Set `data-radius` on any element to adjust border radius tokens:
-
-```html
-<html data-radius="large">
-```
-
-| Value | Factor |
-|-------|--------|
-| `none` | 0 (sharp corners) |
-| `small` | 0.75 |
-| `medium` | 1 (default) |
-| `large` | 1.5 |
-
-### Scoped Customization
-
-Attributes can be applied to any element to scope changes:
-
-```html
-<body data-scaling="100">
-  <aside data-scaling="90">
-    <!-- Compact sidebar -->
-  </aside>
-</body>
-```
+**Supported:** Chrome 123+, Safari 17.5+, Firefox 120+
 
 ## License
 
