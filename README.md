@@ -42,9 +42,9 @@ Tokens are on `:root` and wrapped in `@layer tokens`.
 | `--font-sans` | system-ui, -apple-system, 'Segoe UI', sans-serif |
 | `--font-serif` | georgia, 'Times New Roman', serif |
 | `--font-mono` | 'SF Mono', monaco, 'Courier New', monospace |
-| `--font-size-1` to `--font-size-9` | 12px to 60px |
+| `--font-size-1` to `--font-size-11` | 11px to 57px |
 | `--font-weight-light/regular/medium/bold` | 300/400/500/700 |
-| `--line-height-1` to `--line-height-9` | 16px to 60px |
+| `--line-height-1` to `--line-height-11` | 16px to 64px |
 
 ### Radius
 
@@ -109,6 +109,15 @@ Colors use `light-dark()` for automatic dark mode:
 - **`light-dark()` function** - Automatic dark mode colors
 - **OKLCH color space** - Perceptual uniformity
 - **Scaling support** - `var(--scaling, 1)` multiplier
+
+## Browser Support
+
+Requires browsers supporting:
+- CSS `light-dark()` function
+- OKLCH color space
+- CSS Cascade Layers (`@layer`)
+
+**Supported:** Chrome 123+, Safari 17.5+, Firefox 120+
 
 ## License
 
