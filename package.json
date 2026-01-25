@@ -1,7 +1,7 @@
 {
-  "name": "@okja/chi-tokens",
+  "name": "@ankh-studio/tokens",
   "version": "0.5.2",
-  "description": "Chi Design System tokens - colors, typography, spacing, radius, shadow, motion",
+  "description": "Ankh Studio design tokens - colors, typography, spacing, radius, shadow, motion",
   "type": "module",
   "license": "MIT",
   "author": {
