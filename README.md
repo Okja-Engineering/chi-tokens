@@ -1,20 +1,20 @@
-# @okja/chi-tokens
+# @ankh-studio/tokens
 
-Low-level CSS design tokens for building themes. **If you're building an application, use `@okja/chi-themes` instead.**
+Low-level CSS design tokens for building themes. **If you're building an application, use `@ankh-studio/themes` instead.**
 
-This package provides the foundational design tokens consumed by `@okja/chi-themes`. It's useful if you're creating custom themes or need granular control over the design system.
+This package provides the foundational design tokens consumed by `@ankh-studio/themes`. It's useful if you're creating custom themes or need granular control over the design system.
 
 ## Installation
 
 ```bash
-npm install @okja/chi-tokens
+npm install @ankh-studio/tokens
 ```
 
 ## Usage
 
 ```css
-@import '@okja/chi-tokens/tokens.css';
-@import '@okja/chi-tokens/colors/grayscale.css';
+@import '@ankh-studio/tokens/tokens.css';
+@import '@ankh-studio/tokens/colors/grayscale.css';
 ```
 
 Tokens are on `:root` and wrapped in `@layer tokens`.
