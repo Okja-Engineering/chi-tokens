@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/ankh-studio/tokens.git"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "publishConfig": {
     "access": "public",
     "provenance": true
