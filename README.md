@@ -144,6 +144,11 @@ Requires browsers supporting:
 
 **Supported:** Chrome 123+, Safari 17.5+, Firefox 120+
 
+## Documentation
+
+- [Architecture Decision Records](./docs/adr/) - Design decisions and proposals
+- [Contributing](./CONTRIBUTING.md) - How to contribute
+
 ## License
 
 MIT
