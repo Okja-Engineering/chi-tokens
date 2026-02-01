@@ -1,6 +1,6 @@
 {
   "name": "@ankh-studio/tokens",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Ankh Studio design tokens - colors, typography, spacing, radius, shadow, motion",
   "type": "module",
   "license": "MIT",
