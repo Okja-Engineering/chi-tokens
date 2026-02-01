@@ -7,11 +7,11 @@
   :root {
     color-scheme: light dark;
 
-    /* Primary - Purple */
-    --color-primary: light-dark(oklch(49.4% 0.163 264deg), oklch(79.7% 0.105 264deg));
-    --color-on-primary: light-dark(oklch(100% 0 0deg), oklch(15% 0.163 264deg));
-    --color-primary-container: light-dark(oklch(79.7% 0.105 264deg), oklch(44.5% 0.163 264deg));
-    --color-on-primary-container: light-dark(oklch(20% 0.163 264deg), oklch(91% 0.105 264deg));
+    /* Primary - Purple (#9f86ff) */
+    --color-primary: light-dark(oklch(50% 0.18 285deg), oklch(72% 0.16 285deg));
+    --color-on-primary: light-dark(oklch(100% 0 0deg), oklch(20% 0.18 285deg));
+    --color-primary-container: light-dark(oklch(80% 0.10 285deg), oklch(40% 0.18 285deg));
+    --color-on-primary-container: light-dark(oklch(20% 0.18 285deg), oklch(90% 0.10 285deg));
 
     /* Secondary - Blue/Gray */
     --color-secondary: light-dark(oklch(43.8% 0.029 270deg), oklch(67.5% 0.029 270deg));
@@ -42,12 +42,12 @@
     --color-surface-container-highest: light-dark(oklch(91.5% 0.01 300deg), oklch(24% 0.005 300deg));
 
     /* Surface elevations */
-    --color-surface-0: var(--color-surface);
+    --color-surface-0: light-dark(oklch(100% 0 0deg), oklch(7% 0.005 300deg));
     --color-surface-1: light-dark(oklch(97.5% 0.01 300deg), oklch(12.5% 0.005 300deg));
     --color-surface-2: light-dark(oklch(95.5% 0.01 300deg), oklch(15% 0.005 300deg));
     --color-surface-3: light-dark(oklch(93.5% 0.01 300deg), oklch(19% 0.005 300deg));
     --color-surface-4: light-dark(oklch(91.5% 0.01 300deg), oklch(24% 0.005 300deg));
-    --color-surface-5: light-dark(oklch(90.5% 0.01 300deg), oklch(26% 0.005 300deg));
+    --color-surface-5: light-dark(oklch(91.5% 0.01 300deg), oklch(24% 0.005 300deg));
 
     /* Background */
     --color-background: var(--color-surface);
@@ -56,12 +56,12 @@
     /* Outline */
     --color-outline: light-dark(oklch(50% 0.01 300deg), oklch(61% 0.01 300deg));
     --color-outline-variant: light-dark(oklch(91.8% 0.015 300deg), oklch(33.5% 0.025 270deg));
-    --color-divider: var(--color-outline-variant);
+    --color-divider: var(--color-outline);
 
     /* Inverse */
     --color-inverse-surface: light-dark(oklch(22% 0 0deg), oklch(91.5% 0.005 300deg));
     --color-inverse-on-surface: light-dark(oklch(96% 0.005 300deg), oklch(22.5% 0.005 300deg));
-    --color-inverse-primary: light-dark(oklch(79.7% 0.105 264deg), oklch(49.4% 0.163 264deg));
+    --color-inverse-primary: light-dark(oklch(72% 0.16 285deg), oklch(50% 0.18 285deg));
 
     /* Scrim and shadow */
     --color-scrim: oklch(0% 0 0deg);
