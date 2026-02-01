@@ -42,12 +42,12 @@
     --color-surface-container-highest: light-dark(oklch(91.5% 0.01 300deg), oklch(24% 0.005 300deg));
 
     /* Surface elevations */
-    --color-surface-0: var(--color-surface);
+    --color-surface-0: light-dark(oklch(100% 0 0deg), oklch(7% 0.005 300deg));
     --color-surface-1: light-dark(oklch(97.5% 0.01 300deg), oklch(12.5% 0.005 300deg));
     --color-surface-2: light-dark(oklch(95.5% 0.01 300deg), oklch(15% 0.005 300deg));
     --color-surface-3: light-dark(oklch(93.5% 0.01 300deg), oklch(19% 0.005 300deg));
     --color-surface-4: light-dark(oklch(91.5% 0.01 300deg), oklch(24% 0.005 300deg));
-    --color-surface-5: light-dark(oklch(90.5% 0.01 300deg), oklch(26% 0.005 300deg));
+    --color-surface-5: light-dark(oklch(91.5% 0.01 300deg), oklch(24% 0.005 300deg));
 
     /* Background */
     --color-background: var(--color-surface);
